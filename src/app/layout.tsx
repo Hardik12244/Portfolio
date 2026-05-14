@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hardik Garg — Full-Stack Developer",
   description: "Crafting scalable realtime experiences, AI-integrated products, and modern web applications.",
+  icons: {
+    icon: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({
