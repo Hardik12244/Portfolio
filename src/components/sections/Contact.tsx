@@ -27,12 +27,12 @@ export default function Contact() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
-            Let's build something <br className="hidden md:block" />
+            Let&apos;s build something <br className="hidden md:block" />
             <span className="text-gradient">extraordinary together.</span>
           </h2>
           
           <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
-            Whether it's a startup idea, a scalable backend system, or an AI-integrated application, I'm always open to discussing new projects.
+            Whether it&apos;s a startup idea, a scalable backend system, or an AI-integrated application, I&apos;m always open to discussing new projects.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

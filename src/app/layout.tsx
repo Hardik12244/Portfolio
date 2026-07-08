@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hardik Garg — Full-Stack Developer",
-  description: "Crafting scalable realtime experiences, AI-integrated products, and modern web applications.",
+  title: "Hardik Garg — Full-Stack Developer & Product Builder",
+  description: "Minimal editorial portfolio of Hardik Garg (Scylent). Crafting scalable web applications, realtime systems, and AI-integrated products.",
   icons: {
     icon: "/icon.jpg",
   },
@@ -28,11 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-blue-100 selection:text-blue-900`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] relative overflow-x-hidden selection:bg-black/10">
-        <div className="fixed inset-0 z-[-1] bg-grid-pattern opacity-[0.8] mix-blend-multiply pointer-events-none" />
-        <div className="fixed inset-0 z-[-2] pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white" />
+      <body className="min-h-screen bg-[var(--background)] bg-grid-pattern text-[var(--foreground)] relative overflow-x-hidden selection:bg-[var(--terracotta)] selection:text-white">
         {children}
       </body>
     </html>

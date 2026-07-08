@@ -3,11 +3,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
 import { Github } from "@/components/ui/Icons";
-
+import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
+import TechTimer from "./TechTimer";
 export default function Hero() {
+
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
-      {/* Subtle floating blobs for the background */}
       <motion.div
         animate={{
           y: [0, -20, 0],
@@ -39,20 +42,74 @@ export default function Hero() {
           Available for internships & collaborations
         </motion.div>
 
-        <motion.h1
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-[1.1]"
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row items-center gap-8 md:gap-10"
         >
-          Hardik Garg
-        </motion.h1>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            animate={{ y: [0, -8, 0] }}
+            transition={{
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            className="relative shrink-0"
+          >
+            <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl scale-125" />
+
+            <Image
+              src="/profile.jpg"
+              alt="Hardik Garg"
+              width={220}
+              height={220}
+              className="relative rounded-full object-cover border-4 border-white shadow-2xl"
+            />
+          </motion.div>
+
+          <div className="flex flex-col items-center md:items-start">
+            <motion.h1
+              initial={{ x: 30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-none"
+            >
+              Hardik Garg
+            </motion.h1>
+
+            <TypeAnimation
+              sequence={[
+                "Full Stack Developer",
+                2000,
+                "Tech Enthusiast",
+                2000,
+                "Problem Solver",
+                2000,
+                "AI Explorer",
+                2000,
+              ]}
+              speed={50}
+              repeat={Infinity}
+              className="mt-3 pl-6 text-lg md:text-2xl font-medium text-gray-400 min-h-[36px]"
+            />
+
+              <TechTimer />
+
+
+          </div>
+        </motion.div>
+
 
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium"
+          className="text-lg mt-10 md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium"
         >
           Full-Stack Developer crafting scalable realtime experiences, AI-integrated products, and modern web applications.
         </motion.p>

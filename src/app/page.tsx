@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
 import TechStack from "@/components/sections/TechStack";
 import Projects from "@/components/sections/Projects";
 import Achievements from "@/components/sections/Achievements";
@@ -13,7 +12,6 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col gap-12 sm:gap-20">
         <Hero />
-        <About />
         <TechStack />
         <Projects />
         <div className="bg-gray-50/50 py-12">

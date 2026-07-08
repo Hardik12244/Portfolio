@@ -54,7 +54,7 @@ export default function Navbar() {
           href="#contact"
           className="ml-4 text-xs font-semibold bg-black text-white px-4 py-2 rounded-full hover:scale-105 transition-transform"
         >
-          Let's Talk
+          Let&apos;s Talk
         </a>
       </nav>
     </motion.header>
