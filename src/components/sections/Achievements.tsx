@@ -16,37 +16,58 @@ const achievements = [
   },
   {
     title: "Built KisanSetu",
-    desc: "Engineered an agriculture platform focusing on full-stack systems & realtime features.",
+    desc: "Engineered an agriculture platform focusing on full-stack systems and realtime features.",
     icon: Network,
   },
 ];
 
 export default function Achievements() {
   return (
-    <section className="py-24 px-4 max-w-4xl mx-auto">
+    <section className="py-24 px-4 max-w-5xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[var(--foreground)]">
           Achievements
         </h2>
+
+        <p className="mt-4 text-lg text-[var(--muted)]">
+          Milestones and accomplishments throughout my journey.
+        </p>
       </div>
 
-      <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+      <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-[2px] before:bg-[var(--border)]">
         {achievements.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+            transition={{ duration: 0.5, delay: index * 0.12 }}
+            className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
           >
-            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-50 text-blue-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-              <item.icon className="w-4 h-4" />
+            <div className="flex items-center justify-center w-12 h-12 rounded-full border border-[var(--border)] bg-[var(--background)] text-blue-600 shadow-lg shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+              <item.icon className="w-5 h-5" />
             </div>
-            
-            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-2xl hover:-translate-y-1 transition-transform">
-              <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+
+            <div
+              className="
+                w-[calc(100%-4.5rem)]
+                md:w-[calc(50%-3rem)]
+                glass
+                p-7
+                rounded-3xl
+                border border-[var(--border)]
+                hover:-translate-y-1
+                hover:shadow-xl
+                transition-all
+              "
+            >
+              <h3 className="text-xl md:text-2xl font-bold text-[var(--foreground)] mb-3">
+                {item.title}
+              </h3>
+
+              <p className="text-base md:text-lg text-[var(--muted)] leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           </motion.div>
         ))}

@@ -2,45 +2,99 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap } from "lucide-react";
+import Image from "next/image";
+
+const education = [
+  {
+    degree: "B.Tech in Information Technology",
+    institute: "Bhagwan Parshuram Institute of Technology (GGSIPU)",
+    score: "CGPA: 8.5",
+    period: "2025 - 2029",
+    logo: "/bpit.png",
+  },
+  {
+    degree: "Class XII (CBSE)",
+    institute: "Your School Name",
+    score: "90%",
+    period: "2024 - 2025",
+    logo: "/school.jpg",
+  },
+];
 
 export default function Education() {
   return (
-    <section className="py-16 px-4 max-w-3xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 flex items-center justify-center gap-3">
-          <GraduationCap className="w-8 h-8 text-blue-600" /> Education
-        </h2>
+    <section className="py-24 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] flex items-center justify-center gap-3">
+            <GraduationCap className="w-10 h-10" />
+            Education
+          </h2>
+
+          <p className="mt-4 text-[var(--muted)]">
+            Academic foundation that supported my journey into software
+            engineering.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {education.map((item, index) => (
+            <motion.div
+              key={item.degree}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+              }}
+              whileHover={{
+                y: -4,
+              }}
+              className="
+                border border-[var(--border)]
+                rounded-3xl
+                p-6 md:p-8
+                bg-[var(--background)]
+                shadow-sm
+                transition-all
+              "
+            >
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div className="flex items-center gap-5">
+                  <div className="w-16 h-16 rounded-full border border-[var(--border)] flex items-center justify-center overflow-hidden bg-white">
+                    <Image
+                      src={item.logo}
+                      alt={item.institute}
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-[var(--foreground)]">
+                      {item.degree}
+                    </h3>
+
+                    <p className="text-[var(--foreground)]/80 mt-1">
+                      {item.institute}
+                    </p>
+
+                    <p className="mt-2 text-[var(--muted)] font-medium">
+                      {item.score}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-[var(--muted)] font-medium md:text-right">
+                  {item.period}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="glass p-8 rounded-3xl space-y-8"
-      >
-        <div className="flex justify-between items-start flex-col sm:flex-row gap-4">
-          <div>
-            <h3 className="text-xl font-bold text-gray-900">Guru Gobind Singh Indraprastha University (BPIT)</h3>
-            <p className="text-gray-600 font-medium mt-1">B.Tech in Information Technology</p>
-            <p className="text-sm text-gray-500 mt-1">Minor in Data Science</p>
-          </div>
-          <div className="px-4 py-1.5 bg-blue-50 text-blue-700 font-bold rounded-full text-sm">
-            CGPA: 8.3
-          </div>
-        </div>
-
-        <div className="w-full h-px bg-gray-200" />
-
-        <div className="flex justify-between items-center flex-col sm:flex-row gap-4">
-          <div>
-            <h3 className="text-lg font-bold text-gray-900">12th CBSE Board</h3>
-          </div>
-          <div className="px-4 py-1.5 bg-gray-100 text-gray-700 font-bold rounded-full text-sm">
-            90%
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

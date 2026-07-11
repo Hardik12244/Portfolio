@@ -16,11 +16,8 @@ export default function Home() {
         <TechStack />
         <Projects />
         <GithubGraph />
-
-        <div className="bg-gray-50/50 py-12">
           <Achievements />
           <Education />
-        </div>
         <Contact />
       </main>
     </>
