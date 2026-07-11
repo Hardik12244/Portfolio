@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hardik Garg — Full-Stack Developer & Product Builder",
-  description: "Minimal editorial portfolio of Hardik Garg (Scylent). Crafting scalable web applications, realtime systems, and AI-integrated products.",
+  description:
+    "Minimal editorial portfolio of Hardik Garg (Scylent). Crafting scalable web applications, realtime systems, and AI-integrated products.",
   icons: {
     icon: "/icon.jpg",
   },
@@ -28,10 +30,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen bg-[var(--background)] bg-grid-pattern text-[var(--foreground)] relative overflow-x-hidden selection:bg-[var(--terracotta)] selection:text-white">
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
