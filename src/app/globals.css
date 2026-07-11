@@ -12,10 +12,23 @@
     --status-green-text: #166534;
   }
 
+  .dark {
+    --background: #09090b;
+    --surface: #18181b;
+    --border: #27272a;
+    --foreground: #fafafa;
+    --muted: #a1a1aa;
+    --terracotta: #b65f5f;
+    --status-green-bg: #052e16;
+    --status-green-text: #86efac;
+  }
   html {
     scroll-behavior: smooth;
     color-scheme: light;
   }
+  html.dark {
+  color-scheme: dark;
+}
 
   body {
     background-color: var(--background);
@@ -32,7 +45,6 @@
   }
 }
 
-/* Background Editorial Grid Pattern */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),

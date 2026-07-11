@@ -25,6 +25,7 @@ export default function TechTimer() {
 
       if (days < 0) {
         months--;
+
         const previousMonthDays = new Date(
           now.getFullYear(),
           now.getMonth(),
@@ -65,7 +66,7 @@ export default function TechTimer() {
   }, []);
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 text-gray-400 mt-2">
+    <div className="mt-2 flex flex-wrap items-center justify-center md:justify-start gap-2 text-[var(--muted)] text-sm md:text-base font-medium tracking-wide">
       <span>{elapsed.years}y</span>
       <span>·</span>
 
@@ -84,7 +85,7 @@ export default function TechTimer() {
       <span>{String(elapsed.seconds).padStart(2, "0")}s</span>
       <span>·</span>
 
-      <span className="text-gray-300">
+      <span className="text-[var(--foreground)]/70">
         {String(elapsed.milliseconds).padStart(3, "0")}ms
       </span>
     </div>

@@ -79,7 +79,7 @@ export default function TechStack() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900"
+          className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--foreground)]"
         >
           Technologies & Tools
         </motion.h2>
@@ -89,12 +89,11 @@ export default function TechStack() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="mt-4 text-gray-500"
+          className="mt-4 text-[var(--muted)]"
         >
           Technologies I use to build modern web applications.
         </motion.p>
       </div>
-
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -107,7 +106,7 @@ export default function TechStack() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-20 left-10 text-8xl opacity-[0.03]"
+          className="absolute top-20 left-10 text-8xl opacity-[0.06]"
         >
           ⚛️
         </motion.div>
@@ -122,7 +121,7 @@ export default function TechStack() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute right-20 top-40 text-8xl opacity-[0.03]"
+          className="absolute right-20 top-40 text-8xl opacity-[0.06]"
         >
           ▲
         </motion.div>
@@ -135,13 +134,13 @@ export default function TechStack() {
             duration: 10,
             repeat: Infinity,
           }}
-          className="absolute bottom-20 left-1/3 text-8xl opacity-[0.03]"
+          className="absolute bottom-20 left-1/3 text-8xl opacity-[0.06]"
         >
           ⬢
         </motion.div>
       </div>
 
-      <div className="space-y-14">
+      <div className="space-y-14 cursor-pointer">
         {categories.map((category, categoryIndex) => (
           <motion.div
             key={category.title}
@@ -153,7 +152,7 @@ export default function TechStack() {
               delay: categoryIndex * 0.1,
             }}
           >
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-6">
+            <h3 className="text-xl md:text-2xl font-semibold text-[var(--foreground)] mb-6">
               {category.title}
             </h3>
 
@@ -172,7 +171,6 @@ export default function TechStack() {
                       stiffness: 180,
                       damping: 14,
                       delay: categoryIndex * 0.15 + i * 0.05,
-
                     }}
                     whileHover={{
                       y: -6,
@@ -183,13 +181,16 @@ export default function TechStack() {
                     whileTap={{
                       scale: 0.95,
                     }}
+                    style={{
+                      transformStyle: "preserve-3d",
+                    }}
                     className="
                       group
                       flex items-center gap-3
                       px-4 py-3
                       rounded-xl
-                      border border-gray-200
-                      bg-white/70
+                      border border-[var(--border)]
+                      bg-[color:var(--surface)]/70
                       backdrop-blur-md
                       shadow-sm
                       hover:shadow-lg
@@ -202,7 +203,7 @@ export default function TechStack() {
                       className="transition-transform duration-300 group-hover:rotate-12"
                     />
 
-                    <span className="font-medium text-gray-700">
+                    <span className="font-medium text-[var(--foreground)]">
                       {tech.name}
                     </span>
                   </motion.div>
@@ -212,7 +213,8 @@ export default function TechStack() {
           </motion.div>
         ))}
       </div>
-      <div className="mt-20 overflow-hidden border-y border-gray-200 py-6">
+
+      <div className="mt-20 overflow-hidden border-y border-[var(--border)] py-6">
         <motion.div
           animate={{
             x: ["0%", "-50%"],
@@ -222,7 +224,7 @@ export default function TechStack() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="flex gap-12 whitespace-nowrap text-gray-400 font-medium"
+          className="flex gap-12 whitespace-nowrap text-[var(--muted)] font-medium"
         >
           {[
             "React",

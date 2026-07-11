@@ -6,9 +6,8 @@ import { Github } from "@/components/ui/Icons";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import TechTimer from "./TechTimer";
+
 export default function Hero() {
-
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
       <motion.div
@@ -17,15 +16,16 @@ export default function Hero() {
           rotate: [0, 5, 0],
         }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"
       />
+
       <motion.div
         animate={{
           y: [0, 30, 0],
           rotate: [0, -5, 0],
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-100/40 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="z-10 flex flex-col items-center text-center px-4 max-w-4xl mx-auto space-y-8">
@@ -33,7 +33,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs font-medium text-gray-600 shadow-sm"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs font-medium text-[var(--muted)] shadow-sm border border-[var(--border)]"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -41,7 +41,6 @@ export default function Hero() {
           </span>
           Available for internships & collaborations
         </motion.div>
-
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -68,7 +67,7 @@ export default function Hero() {
               alt="Hardik Garg"
               width={220}
               height={220}
-              className="relative rounded-full object-cover border-4 border-white shadow-2xl"
+              className="relative rounded-full object-cover border-4 border-[var(--border)] shadow-2xl"
             />
           </motion.div>
 
@@ -77,7 +76,7 @@ export default function Hero() {
               initial={{ x: 30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-gray-900 leading-none"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-[var(--foreground)] leading-none"
             >
               Hardik Garg
             </motion.h1>
@@ -95,23 +94,21 @@ export default function Hero() {
               ]}
               speed={50}
               repeat={Infinity}
-              className="mt-3 pl-6 text-lg md:text-2xl font-medium text-gray-400 min-h-[36px]"
+              className="mt-3 pl-6 text-lg md:text-2xl font-medium text-[var(--muted)] min-h-[36px]"
             />
 
-              <TechTimer />
-
-
+            <TechTimer />
           </div>
         </motion.div>
-
 
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-lg mt-10 md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium"
+          className="text-lg mt-10 md:text-xl text-[var(--muted)] max-w-2xl leading-relaxed font-medium"
         >
-          Full-Stack Developer crafting scalable realtime experiences, AI-integrated products, and modern web applications.
+          Full-Stack Developer crafting scalable realtime experiences,
+          AI-integrated products, and modern web applications.
         </motion.p>
 
         <motion.div
@@ -122,23 +119,25 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="group flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+            className="group flex items-center gap-2 bg-[var(--foreground)] text-[var(--background)] px-6 py-3 rounded-full font-medium hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg"
           >
             View Projects
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
+
           <a
             href="https://github.com/Hardik12244"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 glass px-6 py-3 rounded-full font-medium text-gray-700 hover:text-black transition-all hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 glass px-6 py-3 rounded-full font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-all hover:scale-105 active:scale-95"
           >
             <Github className="w-4 h-4" />
             GitHub
           </a>
+
           <a
             href="#"
-            className="flex items-center gap-2 glass px-6 py-3 rounded-full font-medium text-gray-700 hover:text-black transition-all hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 glass px-6 py-3 rounded-full font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-all hover:scale-105 active:scale-95"
           >
             <FileText className="w-4 h-4" />
             Resume

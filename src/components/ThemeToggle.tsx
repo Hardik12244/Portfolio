@@ -17,33 +17,27 @@ export default function ThemeToggle() {
 
   return (
     <motion.button
-      whileTap={{ scale: 0.9 }}
       whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
       onClick={() =>
         setTheme(theme === "dark" ? "light" : "dark")
       }
       className="
-        fixed
-        top-6
-        right-6
-        z-50
-        h-12
-        w-12
+        h-10
+        w-10
         rounded-full
-        border
-        border-gray-200
-        bg-white/80
-        backdrop-blur-md
-        shadow-lg
         flex
         items-center
         justify-center
+        text-[var(--foreground)]
+        hover:bg-[var(--surface)]
+        transition-all
       "
     >
       {theme === "dark" ? (
-        <Sun size={20} />
+        <Sun size={18} />
       ) : (
-        <Moon size={20} />
+        <Moon size={18} />
       )}
     </motion.button>
   );
