@@ -136,7 +136,9 @@ export default function Hero() {
           </a>
 
           <a
-            href="#"
+            href="/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 glass px-6 py-3 rounded-full font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-all hover:scale-105 active:scale-95"
           >
             <FileText className="w-4 h-4" />

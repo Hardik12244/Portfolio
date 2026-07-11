@@ -5,6 +5,7 @@ import Projects from "@/components/sections/Projects";
 import Achievements from "@/components/sections/Achievements";
 import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
+import GithubGraph from "@/components/sections/GithubGraph";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
         <Hero />
         <TechStack />
         <Projects />
+        <GithubGraph />
+
         <div className="bg-gray-50/50 py-12">
           <Achievements />
           <Education />
