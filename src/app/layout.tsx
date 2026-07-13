@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hardik Garg — Full-Stack Developer & Product Builder",
+  title: "Hardik Garg",
   description:
     "Minimal editorial portfolio of Hardik Garg (Scylent). Crafting scalable web applications, realtime systems, and AI-integrated products.",
   icons: {

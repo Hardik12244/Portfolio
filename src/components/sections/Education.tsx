@@ -14,7 +14,7 @@ const education = [
   },
   {
     degree: "Class XII (CBSE)",
-    institute: "Your School Name",
+    institute: "Doesn't Matter",
     score: "90%",
     period: "2024 - 2025",
     logo: "/school.jpg",
