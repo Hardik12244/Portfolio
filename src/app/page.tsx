@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col gap-12 sm:gap-20">
+      {/* <main className="flex flex-col gap-12 sm:gap-20"> */}
         <Hero />
         <TechStack />
         <Projects />
@@ -19,7 +19,7 @@ export default function Home() {
           <Achievements />
           <Education />
         <Contact />
-      </main>
+      {/* </main> */}
     </>
   );
 }

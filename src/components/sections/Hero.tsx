@@ -96,7 +96,6 @@ export default function Hero() {
               repeat={Infinity}
               className="mt-3 pl-6 text-lg md:text-2xl font-medium text-[var(--muted)] min-h-[36px]"
             />
-
             <TechTimer />
           </div>
         </motion.div>
